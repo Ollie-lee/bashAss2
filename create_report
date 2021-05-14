@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "# Aperture Science"
+echo "## Title of report: diameter (in nanometres) and lifetime (in nanoseconds) of a black hole."
+echo "| Diameter      | Lifetime |"
+echo "| ----------- | ----------- |"
+awk -F, '{print $1 "\174" $2}' ./holes.csv            

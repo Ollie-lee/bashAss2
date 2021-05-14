@@ -7,10 +7,13 @@ prerequisites:
 	mkdir ~/.local/bin
 	cp ./pandoc-2.13/bin/pandoc ~/.local/bin
 	chmod a+rx ~/.local/bin/pandoc
+.DELETE_ON_ERROR:
 
-report.md:
-	touch report.md
+report.md: holes.csv
+	./create_report > report.md
+.DELETE_ON_ERROR:
 
-report.html:
-	touch report.html
-
+report.html: holes.csv
+	./create_report > report.md
+	./create_html
+.DELETE_ON_ERROR:

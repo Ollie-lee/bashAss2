@@ -1,0 +1,2 @@
+#!/bin/bash
+./pandoc-2.13/bin/pandoc --from markdown --to html --output=report.html report.md
